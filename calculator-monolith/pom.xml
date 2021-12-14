@@ -67,6 +67,8 @@
               <goal>generate-code</goal>
               <goal>generate-code-tests</goal>
               <goal>build</goal>
+              <goal>check</goal>
+              <goal>cpd-check</goal>
             </goals>
           </execution>
         </executions>
@@ -83,6 +85,8 @@
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <maven.home>${maven.home}</maven.home>
           </systemPropertyVariables>
+          <minimumTokens>25</minimumTokens>
+         <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation>
         </configuration>
       </plugin>
     </plugins>

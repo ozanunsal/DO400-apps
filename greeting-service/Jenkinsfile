@@ -20,7 +20,13 @@ pipeline{
                 sh "npm test"
             }
         }
-
-        // Add the "Deploy" stage here
+        stage("Deploy"){
+            steps{
+                sh '''
+                    oc project ovdnej-deploy-strategies
+                    oc start-build greeting-service --follow --wait
+                '''
+            }
+        }
     }
 }
